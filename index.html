@@ -6,6 +6,7 @@
   <title>Patissiere by Milena</title>
   <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+  
   <style>
     :root {
       --lila: #e9d5ff;
@@ -36,11 +37,39 @@
     header {
       background-color: var(--morado);
       color: white;
-      padding: 1rem;
+      padding: 1rem 2rem;
       text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      max-height: 60px;
+      margin-bottom: 0.5rem;
+    }
+
+    .titulo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+
+    .header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #4b0082;
     }
 
     header img {
@@ -49,23 +78,75 @@
       margin-bottom: 0.5rem;
     }
 
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     nav {
       display: flex;
       justify-content: center;
       background-color: var(--lila);
-      padding: 1rem;
+      padding: 0.5rem 0;
       gap: 2rem;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--dorado);
+      color: var(--morado);
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
+      margin: 0 1rem;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+
+    .menu-icon {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: var(--dorado);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-menu a {
+      margin: 1rem 0;
     }
 
     section {
-      padding: 2rem;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    section h2 {
+      color: #4b0082;
+      margin-bottom: 1rem;
     }
 
     .titulo-seccion {
@@ -260,12 +341,46 @@
       margin-top: 2rem;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 768px) {
+      
+      header {
+        text-align: left;
+        padding-left: 3rem;
       }
-    } 
+
+      .logo {
+        margin: 0 auto 0.5rem auto;
+        display: block;
+      }
+
+      .titulo {
+        text-align: center;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #e6d1fa;
+        text-align: center;
+      }
+
+      .menu-icon {
+        display: flex;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
 
     @media (max-width: 768px) {
      .cards-container {
@@ -291,23 +406,58 @@
       }
     }
 
+    @media (max-width: 768px) {
+     .cards-container {
+     flex-direction: column;
+     align-items: center;
+    }
+
+     .card-opcion {
+       width: 100%;
+       max-width: 420px;
+      }
+    }
+
+
   
   </style>
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="Logo de la pastelería">
-    <h3>Menú de Tortas y Mesas Dulces</h3>
+    <div class="menu-icon" id="menu-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="header-center">
+      <img src="img/logo.png" alt="Logo de la pastelería">
+      <h3>Menú de Tortas y Mesas Dulces</h3>
+    </div>
   </header>
 
-  <nav>
-    <a href="#tortas">Tortas</a>
-    <a href="#mesa">Mesa Dulce</a>
-    <a href="#tartas">Tartas</a>
-    <a href="#postres">Postres</a>
-    <a href="#info">Info Importante</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+      <nav id="menu">
+       <a href="#tortas">Tortas</a>
+       <a href="#mesa">Mesa Dulce</a>
+       <a href="#tartas">Tartas</a>
+       <a href="#postres">Postres</a>
+       <a href="#info">Info Importante</a>
+       <a href="#contacto">Contacto</a>
+      </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+       <a href="#tortas">Tortas</a>
+       <a href="#mesa">Mesa Dulce</a>
+       <a href="#tartas">Tartas</a>
+       <a href="#postres">Postres</a>
+       <a href="#info">Info Importante</a>
+       <a href="#contacto">Contacto</a>
+    </div>
+
+
+
+
+
   
   <section id="tortas">
     <h2 class="titulo-seccion">Tortas Personalizadas</h2>
@@ -331,7 +481,7 @@
       <h2 class="titulo-seccion">¡Diseñá tu torta ideal! ✨</h2>
       <div class="cards-container">
         <div class="card-opcion">
-          <h3>Sabores de bizcochuelo 🍰</h3>
+          <h3>Bizcochuelos 🍰</h3>
           <ul>
            <li>Vainilla</li>
            <li>Naranja</li>
@@ -532,11 +682,17 @@
 
   <a class="whatsapp-btn" href="https://wa.me/549XXXXXXXXXX" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20">
-    Escribinos
   </a>
 
   <footer>
     <p>&copy; 2025 Delicias Personalizadas - Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
