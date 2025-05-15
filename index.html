@@ -7,11 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <!-- Etiquetas Open Graph para WhatsApp, Facebook, etc -->
-  <meta property="og:title" content="Menú de Tortas y Mesas Dulces" />
-  <meta property="og:description" content="Conocé nuestras tortas personalizadas, mesas dulces y más." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/milenacoscio/patissiere-by-milena/main/icon.png" />
-  <meta property="og:url" content="https://milenacoscio.github.io/patissiere-by-milena/" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Patisserie by Milena">
+  <meta property="og:description" content="Mirá nuestras tortas personalizadas y mesas dulces.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/milenacoscio/patissiere-by-milena/main/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://milenacoscio.github.io/patissiere-by-milena/">
+
   
   <style>
     :root {
@@ -162,6 +163,52 @@
       text-align: center;
     }
 
+    .seccion-tortas {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 40px;
+     padding: 40px 20px;
+    }
+
+    .galeria-tortas {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     flex: 1 1 300px;
+     max-width: 350px; 
+    }
+
+    .bloque-torta {
+     background-color: #f8f1fc;
+     border-radius: 12px;
+     padding: 10px;
+     text-align: center;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .bloque-torta img {
+     width: 100%;
+     max-height: auto;
+     object-fit: cover;
+     border-radius: 10px;
+    }
+
+    .info-tortas {
+     flex: 1 1 350px;
+     max-width: 400px;
+     background-color: white;
+     padding: 20px;
+     border-radius: 12px;
+     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+     color: #4a2b6f;
+     font-size: 1.1em;
+     border: 2px solid var(--lila);
+     box-sizing: border-box;
+    }
+
+
     .card {
       background-color: white;
       border: 2px solid var(--lila);
@@ -177,6 +224,12 @@
      justify-content: center;
      gap: 1.5rem;
      margin-top: 1rem;
+    }
+
+
+    .card-infotortas h2 {
+    	margin-bottom: 0.5rem;
+    	text-align: center;
     }
 
     .card-opcion {
@@ -347,6 +400,26 @@
       margin-top: 2rem;
     }
 
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+ 
+    @keyframes fadeInUp {
+     to {
+     opacity: 1;
+     transform: translateY(0);
+     }
+    }
+
+
     @media (max-width: 768px) {
       
       header {
@@ -424,6 +497,12 @@
       }
     }
 
+    #seccion-tortas {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
 
   
   </style>
@@ -466,8 +545,8 @@
 
   
   <section id="tortas">
-    <h2 class="titulo-seccion">Tortas Personalizadas</h2>
-    <div class="card">
+     <h2 class="titulo-seccion">Tortas Personalizadas</h2>
+     <div class="card">
       <h3>¿Cómo hacer tu pedido dulce? 🎂</h3>
       <dl>
         <dt>✔️ <b>FECHA DEL EVENTO</b></dt>
@@ -481,7 +560,53 @@
         <dt>✔️ <b>LA FECHA SE RESERVA CON SEÑA DEL 50%</b></dt>
         <dd>Si la reserva es con mucha anticipación, la seña no congela el precio. El precio se confirma 7 días previo a la fecha.</dd>
       </dl>
+     </div>
+
+  <section class="seccion-tortas">
+    <div class="info-tortas fade-in">
+    	<div class="card-infotortas">
+          <h2>¡Elegí tu torta personalizada!</h2>
+          <p>
+            Ofrecemos tortas de diferentes tamaños para adaptarnos a tus necesidades:
+            <br><br>
+            <strong>• Torta chica</strong> (15 cm): rinde 8 a 10 porciones<br>
+            <strong>• Torta mediana</strong> (20 cm): rinde 12 a 15 porciones<br>
+            <strong>• Torta grande</strong> (25 cm): rinde 18 a 24 porciones<br><br>
+            Consultanos por opciones de decoración, sabores y rellenos especiales.
+           </p>
+         </div>
     </div>
+
+    <div class="galeria-tortas fade-in">
+      <div class="bloque-torta">
+        <img src="img/torta1.png" alt="Torta personalizada 1">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta2.png" alt="Torta personalizada 2">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta3.png" alt="Torta personalizada 3">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta4.png" alt="Torta personalizada 4">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta5.png" alt="Torta personalizada 5">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta6.png" alt="Torta personalizada 6">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta7.png" alt="Torta personalizada 7">
+      </div>
+      <div class="bloque-torta">
+       <img src="img/torta8.png" alt="Torta personalizada 8">
+      </div>
+    </div>
+   </section>
+
+
+
   
      <section id="opciones-torta">
       <h2 class="titulo-seccion">¡Diseñá tu torta ideal! ✨</h2>
@@ -698,6 +823,25 @@
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('active');
     }
+
+     const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      appearOnScroll.unobserve(entry.target);
+    });
+   }, appearOptions);
+
+    faders.forEach(fader => {
+       appearOnScroll.observe(fader);
+     });
   </script>
 
 </body>
