@@ -163,21 +163,13 @@
       text-align: center;
     }
 
-    .seccion-tortas {
+    .tortas-container {
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
      align-items: flex-start;
      gap: 40px;
      padding: 40px 20px;
-    }
-
-    .galeria-tortas {
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     flex: 1 1 300px;
-     max-width: 350px; 
     }
 
     .bloque-torta {
@@ -200,12 +192,24 @@
      max-width: 400px;
      background-color: white;
      padding: 20px;
-     border-radius: 12px;
-     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+     border-radius: 16px;
+     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
      color: #4a2b6f;
      font-size: 1.1em;
      border: 2px solid var(--lila);
      box-sizing: border-box;
+     text-align: left;
+    }
+
+    .info-tortas h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color:#4b0082
+    }
+
+    .info-tortas ul {
+      padding-left: 20px;
     }
 
 
@@ -346,17 +350,35 @@
     }
 
     .galeria {
+      flex: 1 1 500px;
+      max-width: 600px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .galeria img {
+    .imagen-principal img {
       width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: opacity 0.5s ease;
+    }
+
+    .miniaturas img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .miniaturas img:hover {
+      opacity: 1;
+      transform: scale(1.05);
     }
 
     .whatsapp-btn {
@@ -398,25 +420,6 @@
       background-color: var(--lila);
       color: #333;
       margin-top: 2rem;
-    }
-
-
-    .fade-in.appear {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
- 
-    @keyframes fadeInUp {
-     to {
-     opacity: 1;
-     transform: translateY(0);
-     }
     }
 
 
@@ -497,10 +500,21 @@
       }
     }
 
-    #seccion-tortas {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    @media (max-width: 768px) {
+  .tortas-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria {
+    order: 1;
+  }
+
+  .info-tortas {
+    order: 2;
+    width: 90%;
+  }
+}
 
 
 
@@ -562,9 +576,8 @@
       </dl>
      </div>
 
-  <section class="seccion-tortas">
-    <div class="info-tortas fade-in">
-    	<div class="card-infotortas">
+  <section class="tortas-container">
+    <div class="info-tortas">
           <h2>¡Elegí tu torta personalizada!</h2>
           <p>
             Ofrecemos tortas de diferentes tamaños para adaptarnos a tus necesidades:
@@ -574,35 +587,22 @@
             <strong>• Torta grande</strong> (25 cm): rinde 18 a 24 porciones<br><br>
             Consultanos por opciones de decoración, sabores y rellenos especiales.
            </p>
-         </div>
     </div>
 
-    <div class="galeria-tortas fade-in">
-      <div class="bloque-torta">
-        <img src="img/torta1.png" alt="Torta personalizada 1">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta2.png" alt="Torta personalizada 2">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta3.png" alt="Torta personalizada 3">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta4.png" alt="Torta personalizada 4">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta5.png" alt="Torta personalizada 5">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta6.png" alt="Torta personalizada 6">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta7.png" alt="Torta personalizada 7">
-      </div>
-      <div class="bloque-torta">
-       <img src="img/torta8.png" alt="Torta personalizada 8">
-      </div>
-    </div>
+
+     <div class="galeria">
+       <div class="imagen-principal">
+         <img id="imagenGrande" src="img/torta1.png" alt="Torta 1">
+       </div>
+       <div class="miniaturas">
+         <img src="img/torta1.png" onclick="cambiarImagen(this.src)" alt="Torta 1">
+         <img src="img/torta2.png" onclick="cambiarImagen(this.src)" alt="Torta 2">
+         <img src="img/torta4.png" onclick="cambiarImagen(this.src)" alt="Torta 4">
+         <img src="img/torta5.png" onclick="cambiarImagen(this.src)" alt="Torta 5">
+         <img src="img/torta6.png" onclick="cambiarImagen(this.src)" alt="Torta 6">
+         <img src="img/torta7.png" onclick="cambiarImagen(this.src)" alt="Torta 7">
+         <img src="img/torta8.png" onclick="cambiarImagen(this.src)" alt="Torta 8">
+       </div>
    </section>
 
 
@@ -820,28 +820,27 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
+ const imagenes = [
+    "img/torta1.png",
+    "img/torta2.png",
+    "img/torta4.png",
+    "img/torta5.png",
+    "img/torta6.png",
+    "img/torta7.png",
+    "img/torta8.png"
+  ];
 
-     const faders = document.querySelectorAll('.fade-in');
+  let indice = 0;
+  const imagenGrande = document.getElementById("imagenGrande");
 
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
+  function cambiarImagen(src) {
+    imagenGrande.src = src;
+  }
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("appear");
-      appearOnScroll.unobserve(entry.target);
-    });
-   }, appearOptions);
-
-    faders.forEach(fader => {
-       appearOnScroll.observe(fader);
-     });
+  setInterval(() => {
+    indice = (indice + 1) % imagenes.length;
+    imagenGrande.src = imagenes[indice];
+  }, 4000); // cambia cada 4 segundos
   </script>
 
 </body>
