@@ -16,9 +16,10 @@
   
   <style>
     :root {
-      --lila: #e9d5ff;
-      --morado: #a855f7;
-      --dorado: #c084fc;
+      --lila: #c084fc;
+      --lilaclaro: #e9d5ff;
+      --morado: #b895d7;
+      --dorado: #5843a1;
       --fondo: #fff7fc;
       --violeta: #2d1e63;
     }
@@ -94,7 +95,7 @@
     nav {
       display: flex;
       justify-content: center;
-      background-color: var(--lila);
+      background-color: var(--fondo);
       padding: 0.5rem 0;
       gap: 2rem;
       flex-wrap: wrap;
@@ -158,7 +159,7 @@
 
     .titulo-seccion {
       font-size: 2rem;
-      color: var(--morado);
+      color: #4b0082;
       margin-bottom: 1rem;
       text-align: center;
     }
@@ -172,20 +173,6 @@
      padding: 40px 20px;
     }
 
-    .bloque-torta {
-     background-color: #f8f1fc;
-     border-radius: 12px;
-     padding: 10px;
-     text-align: center;
-     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .bloque-torta img {
-     width: 100%;
-     max-height: auto;
-     object-fit: cover;
-     border-radius: 10px;
-    }
 
     .info-tortas {
      flex: 1 1 350px;
@@ -194,18 +181,18 @@
      padding: 20px;
      border-radius: 16px;
      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-     color: #4a2b6f;
+     color: #333;
      font-size: 1.1em;
      border: 2px solid var(--lila);
      box-sizing: border-box;
      text-align: left;
     }
 
-    .info-tortas h2 {
+    .info-tortas h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
       text-align: center;
-      color:#4b0082
+      color: #5843a1
     }
 
     .info-tortas ul {
@@ -217,6 +204,7 @@
       background-color: white;
       border: 2px solid var(--lila);
       border-radius: 12px;
+      color: #333;
       padding: 1rem;
       margin-bottom: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -247,7 +235,7 @@
     }
 
     .card-opcion h3 {
-     color: var(--morado);
+     color: #5843a1;
      margin-bottom: 0.5rem;
      text-align: center;
     }
@@ -261,7 +249,7 @@
     }
 
     .combo-card {
-     background-color: var(--lila);
+     background-color: #e9d5ff;
      padding: 1.5rem; /* mas espacio intero */
      border-radius: 12px;
      max-width: 300px;  /* mas ancho */
@@ -276,7 +264,7 @@
     .combo-card h3, .combo-card h4 {
      font-weight: bold;
      margin-bottom: 1rem;
-     color: var(--morado);
+     color: #5843a1;
      text-align: center;
     }
 
@@ -286,7 +274,7 @@
 
 
     .card h3 {
-      color: var(--morado);
+      color: #5843a1;
     }
 
     .combo-card ul, .card ul, .card-opcion ul {
@@ -307,7 +295,7 @@
     }
 
     .tarjeta-tarta, .tarjeta-postre {
-     background-color: var(--lila);
+     background-color: #e9d5ff;
      border-radius: 15px;
      padding: 1rem;
      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -337,10 +325,10 @@
       font-style: italic;
       font-weight: bold;
       background-color: white;
-      border: 2px solid var(--morado);
+      border: 2px solid #5843a1;
       padding: 4px 10px;
       border-radius: 10px;
-      color: var(--morado);
+      color: #5843a1;
       display: inline-block;
       margin: 1rem 0 0.5rem;
     }
@@ -417,7 +405,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: var(--lila);
+      background-color: var(--morado);
       color: #333;
       margin-top: 2rem;
     }
@@ -578,7 +566,7 @@
 
   <section class="tortas-container">
     <div class="info-tortas">
-          <h2>¡Elegí tu torta personalizada!</h2>
+          <h3>¡Elegí tu torta personalizada!</h3>
           <p>
             Ofrecemos tortas de diferentes tamaños para adaptarnos a tus necesidades:
             <br><br>
