@@ -203,7 +203,7 @@
      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
      color: #333;
      font-size: 1.1em;
-     border: 2px solid var(--lila);
+     border: 2px solid #5843a1;
      box-sizing: border-box;
      text-align: left;
     }
@@ -222,7 +222,7 @@
 
     .card {
       background-color: white;
-      border: 2px solid var(--lila);
+      border: 2px solid #5843a1;
       border-radius: 12px;
       color: #333;
       padding: 1rem;
@@ -246,7 +246,7 @@
 
     .card-opcion {
      background-color: white;
-     border: 2px solid var(--lila);
+     border: 2px solid #5843a1;
      border-radius: 15px;
      padding: 1rem;
      width: 300px;
@@ -260,7 +260,7 @@
      text-align: center;
     }
 
-    .mesa-container {
+    .combo-container {
      display: flex;
      justify-content: center;
      gap: 2rem;
@@ -269,7 +269,7 @@
     }
 
     .combo-card {
-     background-color: #e9d5ff;
+     background-color: #D0B5D8;
      padding: 1.5rem; /* mas espacio intero */
      border-radius: 12px;
      max-width: 300px;  /* mas ancho */
@@ -284,7 +284,7 @@
     .combo-card h3, .combo-card h4 {
      font-weight: bold;
      margin-bottom: 1rem;
-     color: #5843a1;
+     color: #4B0082;
      text-align: center;
     }
 
@@ -307,15 +307,15 @@
       margin-bottom: 0.3rem;
     }
 
-    .postres-container, .tartas-container {
+    .postres-container, .tartas-container, .mesa-container {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
     }
 
-    .tarjeta-tarta, .tarjeta-postre {
-     background-color: #e9d5ff;
+    .tarjeta-tarta, .tarjeta-postre, .tarjeta-mesa {
+     background-color: #E8DAEC;
      border-radius: 15px;
      padding: 1rem;
      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -328,7 +328,7 @@
      gap: 0.5rem; /* Espacio pequeño entre título e imagen */
     }
 
-    .tarjeta-postre img, .tarjeta-tarta img {
+    .tarjeta-postre img, .tarjeta-tarta img, .tarjeta-mesa img {
       width: 150px;
       height: auto;
       border-radius: 10px;
@@ -341,7 +341,7 @@
     }
 
 
-    .tarjeta-tarta h3, .tarjeta-postre h3 {
+    .tarjeta-tarta h3, .tarjeta-postre h3, .tarjeta-mesa h3 {
       font-style: italic;
       font-weight: bold;
       background-color: white;
@@ -353,7 +353,7 @@
       margin: 1rem 0 0.5rem;
     }
 
-    .tarjeta-tarta, .tarjeta-postre {
+    .tarjeta-tarta, .tarjeta-postre, .tarjeta-mesa {
       flex: 1;
     }
 
@@ -542,7 +542,7 @@
         <dt>✔️ <b>CANTIDAD DE PERSONAS</b></dt>
         <dd>Según cantidad de personas para los cuales necesites la torta, será de un tamaño determinado.</dd>
         <dt>✔️ <b>SABOR DE BIZCOCHUELO Y RELLENO</b></dt>
-        <dd>Podes elegir entre las opciones disponibles o consultar por otro tipo. El precio estimado es bizcochuelo de vainilla con dulce de leche, cubierta de chococream.</dd>
+        <dd>Podes elegir entre las opciones disponibles o consultar por otro tipo. El precio estimado es bizcochuelo de vainilla con dulce de leche.</dd>
         <dt>✔️ <b>DISEÑO DE LA TORTA</b></dt>
         <dd>Indicar temática, idea o color que te gustaría.</dd>
         <dt>✔️ <b>LA FECHA SE RESERVA CON SEÑA DEL 50%</b></dt>
@@ -562,7 +562,7 @@
 
            🌈 Por otros sabores y rellenos, consultar presupuesto.<br><br>
            💲El precio puede variar en función de la complejidad del diseño, 
-           colores como azul, negro y rojo.<br><br>
+           temática o colores como azul, negro y rojo.<br><br>
            💜Los adornos, toppers, impresiones, flores o detalles en dorado se cotizan aparte.
            </p>
     </div>
@@ -612,6 +612,8 @@
            <li>Crema oreo</li>
            <li>Marroc</li>
            <li>Bon o bon</li>
+           <li>Ganache de café</li>
+           <li>Ganache de limón y frutos rojos</li>
           </ul>
         </div>
 
@@ -623,7 +625,6 @@
              <li>Merenguitos</li>
              <li>Chips de chocolate</li>
              <li>Rocklets</li>
-             <li>Chips de chocolate</li>
              <li>Oreos</li>
             </ul>
           </div>
@@ -633,21 +634,22 @@
 
 
   <section id="mesa">
-   <h2 class="titulo-seccion">Combos para mesa dulce  🍭</h2>
-     <div class="mesa-container">
+   <h2 class="titulo-seccion">Mesa dulce  🍭</h2><br>
+     <h2 style="color: #4b0082; text-align: center;">Combos</h3>
+     <div class="combo-container">
       <div class="combo-card">
         <h3>Combo para 15 personas</h3>
         <p>🍰 Torta 16cm de vainilla, relleno de dulce de leche. </p>
         <ul>
           <li>6 cookies de glase real</li>
           <li>6 cupcakes</li>
-          <li>12 mini alfajorcitos (sable o maicena)</li>
+          <li>12 mini alfajorcitos (sablée o maicena)</li>
           <li>6 shots</li>
         </ul><br>
         <p><em><b>Podés personalizar cada detalle del combo según 
           el motivo o color de tu evento 🎨</b></em>
         </p><br>
-        <h4 style="color:#5843a1">Valor estimado<br> $100.000</h4>
+        <h4>Valor estimado<br> $100.000</h4>
       </div>
       <div class="combo-card">
         <h3>Combo para 30 personas</h3>
@@ -655,29 +657,77 @@
         <ul>
           <li>15 cookies de glase real</li>
           <li>15 cupcakes</li>
-          <li>15 mini alfajorcitos (sable o maicena)</li>
+          <li>15 mini alfajorcitos (sablée o maicena)</li>
           <li>15 shots</li>
         </ul><br>
         <p><em><b>Podés personalizar cada detalle del combo según 
           el motivo o color de tu evento 🎨</b></em>
         </p><br>
-        <h4 style="color:#5843a1">Valor estimado<br> $180.000</h4>
+        <h4>Valor estimado<br> $180.000</h4>
       </div>
       <div class="combo-card">
         <h3>Combo para 50 personas</h3>
         <p>🍰 Torta 24cm bizcochuelo a elección, relleno de dulce de leche. </p>
         <ul>
           <li>24 cookies de glase real</li>
-          <li>24 cupcakes o mini postrecitos/tartitas</li>
-          <li>24 mini alfajorcitos (sable o maicena)</li>
+          <li>24 cupcakes, 24 mini bocaditos o 12 mini tartas</li>
+          <li>24 mini alfajorcitos (sablée o maicena)</li>
           <li>24 shots</li>
         </ul><br>
         <p><em><b>Podés personalizar cada detalle del combo según 
           el motivo o color de tu evento 🎨</b></em>
         </p><br>
-        <h4 style="color:#5843a1">Valor estimado<br> $250.000</h4>
+        <h4>Valor estimado<br> $250.000</h4>
+      </div>
+     </div><br><br><br>
+
+     <h2 style="color: #4b0082; text-align: center;">Mini Delicias</h3>
+      <p style="color: #4B0082; text-align: center;"><b>Detalles que se adaptan a tu estilo. Todo es personalizable para que combine perfecto con tu evento.</b></p><br><br>
+     <div class="mesa-container">
+      <div class="tarjeta-mesa">
+        <h3>Cupcakes</h3>
+        <img src="img/cupcakes.png" alt="Cupcakes">
+        <p>Docena $ <br> Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Cookies</h3> 
+        <img src="img/cookies1.png" alt="Cookies">
+        <p style="">Docena $ <br> Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Mini Alfajores</h3>
+        <img src="img/minialfajores.png" alt="Mini Alfajores">
+        <p style="">Docena $ <br> Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Shots</h3>
+        <img src="img/shots.png" alt="Shots">
+        <p style="">Docena $ <br> Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Mini tartas o bocaditos</h3>
+        <img src="img/minitartas.png" alt="Mini Tartas">
+        <p>Podes elegir un sabor por media docena.<br></p>
+        <p style="">Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Mini donas</h3>
+        <img src="img/minidonas.png" alt="Mini Donas">
+        <p style="">Docena $ <br> Media docena $</p>
+      </div>
+
+      <div class="tarjeta-mesa">
+        <h3>Cakepops</h3>
+        <img src="img/cakepops.png" alt="Cakepops">
+        <p style="">Docena $ <br> Media docena $</p>
       </div>
      </div>
+
   </section>
 
 
